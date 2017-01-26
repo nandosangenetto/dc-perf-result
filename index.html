@@ -1,0 +1,363 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>DermaClub - Resultado de Performance</title>
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/sky.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- Printing and PDF exports -->
+    <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <section>
+            </section>
+
+            <section data-transition="zoom">
+                <img src="./images/dermaclub-logo.png" class="reset-image">
+                <h4>Resultados do trabalho de performance</h4>
+            </section>
+
+            <section>
+                <h2>Objetivo</h2>
+                <ul>
+                    <li class="fragment">Reduzir o tamanho da página</li>
+                    <li class="fragment">Reduzir o número de recursos carregados</li>
+                    <li class="fragment">Reduzir o número de requisições</li>
+                    <li class="fragment">Reduzir o tempo de carregamento em 3 segundos</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Trabalho realizado</h2>
+                <ul>
+                    <li class="fragment">304 arquivos modificados</li>
+                    <li class="fragment">Em 225 commits</li>
+                    <li class="fragment">Convertemos todo código LESS para SCSS</li>
+                    <li class="fragment">Reorganizamos a arquitetura dos diretórios SCSS</li>
+                    <li class="fragment">Reescrevemos diversos componentes do CSS</li>
+                    <li class="fragment">Removemos o uso de várias bibliotecas JavaScript (jQuery, jQueryUI, sliders, modal)</li>
+                    <li class="fragment">Refatoramos o código do JavaScript</li>
+                    <li class="fragment">Apenas utilizamos o JavaScript em casos realmente necessários</li>
+                    <li class="fragment">Também nos concentramos na fluidez da página (FPS alto)</li>
+                </ul>
+            </section>
+
+            <section>
+                <section>
+                    <h2>Otimizações no front-end</h2>
+                    <p>
+                        Nos concentramos bastante em refatorar o código e em remover dependências, códigos inúteis e não otimizados.
+                    </p>
+                </section>
+
+                <section>
+                    <h5>default.less 👉 default.scss</h5>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Linhas</th>
+                                <th>Tamanho</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Antes</th>
+                                <td>19149</td>
+                                <td>64.1KB</td>
+                            </tr>
+                            <tr>
+                                <th>Depois</th>
+                                <td>8919</td>
+                                <td>34.9KB</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section>
+                    <h5>wb-auto-css.css</h5>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Linhas</th>
+                                <th>Tamanho</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Antes</th>
+                                <td>6</td>
+                                <td>48.9KB</td>
+                            </tr>
+                            <tr>
+                                <th>Depois</th>
+                                <td>?</td>
+                                <td>?</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section>
+                    <h5>wb-auto-js.js</h5>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Linhas</th>
+                                <th>Tamanho</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Antes</th>
+                                <td>55</td>
+                                <td>235KB</td>
+                            </tr>
+                            <tr>
+                                <th>Depois</th>
+                                <td>?</td>
+                                <td>?</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section>
+                    <h5>wb-local.js</h5>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Linhas</th>
+                                <th>Tamanho</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Antes</th>
+                                <td>1382</td>
+                                <td>10.8KB</td>
+                            </tr>
+                            <tr>
+                                <th>Depois</th>
+                                <td>1021</td>
+                                <td>8.8KB</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section data-transition="fade">
+                    <h5>Arquivos Removidos</h5>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Linhas</th>
+                                <th>Tamanho</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="fragment">
+                                <th>javascript-labels</th>
+                                <td>136</td>
+                                <td>10.9KB</td>
+                            </tr>
+                            <tr class="fragment">
+                                <th>jquery.lastest.js</th>
+                                <td>9789</td>
+                                <td>79.6KB</td>
+                            </tr>
+                            <tr class="fragment">
+                                <th>jquery-ui.lastest.js</th>
+                                <td>14971</td>
+                                <td>105KB</td>
+                            </tr>
+                            <tr class="fragment">
+                                <th>wb_jquery.js</th>
+                                <td>2135</td>
+                                <td>17.7KB</td>
+                            </tr>
+                            
+                            
+                            
+                        </tbody>
+                    </table>
+                </section>
+
+                <section data-transition="fade">
+                    <h5>Arquivos Removidos</h5>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Linhas</th>
+                                <th>Tamanho</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            <tr class="fragment">
+                                <th>jquery.sliderPro.js</th>
+                                <td>5955</td>
+                                <td>37KB</td>
+                            </tr>
+                            <tr class="fragment">
+                                <th>slider-pro.css</th>
+                                <td>824</td>
+                                <td>2.8KB</td>
+                            </tr>
+                            <tr class="fragment">
+                                <th>animate.min.css</th>
+                                <td>11</td>
+                                <td>4.2KB</td>
+                            </tr>
+                            <tr class="fragment">
+                                <th>slick.js</th>
+                                <td>136</td>
+                                <td>10.9KB</td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </section>            
+    
+                <section data-transition="fade">
+                    <h5>Arquivos Removidos</h5>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Linhas</th>
+                                <th>Tamanho</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr class="fragment">
+                                <th>slick.css</th>
+                                <td>119</td>
+                                <td>899B</td>
+                            </tr>
+                            <tr class="fragment">
+                                <th>slick-theme.css</th>
+                                <td>216</td>
+                                <td>1.3KB</td>
+                            </tr>
+                            <tr class="fragment">
+                                <th>jquery.jcarousel.min.js</th>
+                                <td>4</td>
+                                <td>5.5KB</td>
+                            </tr>
+                            <tr class="fragment">
+                                <th>jquery.jcarousel-swipe.min.js</th>
+                                <td>1</td>
+                                <td>2.1KB</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </section>   
+
+                <section data-transition="fade">
+                    <h5>Arquivos Removidos</h5>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Linhas</th>
+                                <th>Tamanho</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        
+                            <tr class="fragment">
+                                <th>jcarousel.responsive.css</th>
+                                <td>104</td>
+                                <td>966B</td>
+                            </tr>
+                            <tr class="fragment">
+                                <th>jquery.mCustomScrollbar.min.js</th>
+                                <td>5</td>
+                                <td>13.4KB</td>
+                            </tr>
+                            <tr class="fragment">
+                                <th>jquery.mCustomScrollbar.css</th>
+                                <td>1267</td>
+                                <td>5.8KB</td>
+                            </tr>
+                            <tr class="fragment">
+                                <th>font-awesome.min.css</th>
+                                <td>4</td>
+                                <td>7.6KB</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </section>   
+
+            </section>
+
+            <section>
+                <h1>Otimização</h1>
+                <p></p>
+            </section>
+
+            <section>
+                <h1>Velocidade</h1>
+                <p></p>
+            </section>
+
+            <section>
+                <h1>Renderização</h1>
+                <p></p>
+            </section>
+
+            <section>
+                <h1>Tarefas futuras</h1>
+                <p></p>
+            </section>
+
+        </div>
+    </div>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script>
+        Reveal.initialize({
+            history: true,
+            dependencies: [{
+                src: 'plugin/markdown/marked.js'
+            }, {
+                src: 'plugin/markdown/markdown.js'
+            }, {
+                src: 'plugin/notes/notes.js',
+                async: true
+            }, {
+                src: 'plugin/highlight/highlight.js',
+                async: true,
+                callback: function() {
+                    hljs.initHighlightingOnLoad();
+                }
+            }]
+        });
+    </script>
+</body>
+
+</html>
